@@ -5,7 +5,7 @@ plugins {
     id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 }
 
-group = 'com.example'
+group = 'org.example'
 version = '1.0.0'
 sourceCompatibility = '17'
 
@@ -18,6 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.hibernate.orm:hibernate-core:6.0.2.Final'  // Hibernate 6.0.2 이상
     implementation 'mysql:mysql-connector-java:8.0.33'  // MySQL 드라이버 추가
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     // queryDSL
     implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
@@ -29,11 +30,8 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.3'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
 
-
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-
-    implementation 'org.hibernate:hibernate-core:5.6.9.Final'
 
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
     implementation 'org.springdoc:springdoc-openapi-data-rest:1.6.9'
