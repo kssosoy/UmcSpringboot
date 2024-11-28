@@ -1,13 +1,14 @@
 package org.example.umcspringworkbook4.converter;
 
 import org.example.umcspringworkbook4.apiPayload.code.status.ErrorStatus;
-import org.example.umcspringworkbook4.apiPayload.exception.handler.FoodCategoryHandler;
+
 import org.example.umcspringworkbook4.apiPayload.exception.handler.MemberHandler;
 import org.example.umcspringworkbook4.apiPayload.exception.handler.StoreHandler;
 import org.example.umcspringworkbook4.domain.Member;
 import org.example.umcspringworkbook4.domain.Review;
 import org.example.umcspringworkbook4.domain.Store;
-import org.example.umcspringworkbook4.repository.MemberRepository.MemberRepository;
+import org.example.umcspringworkbook4.repository.MemberRepository;
+
 import org.example.umcspringworkbook4.repository.StoreRepository.StoreRepository;
 import org.example.umcspringworkbook4.web.dto.ReviewRequestDTO;
 import org.example.umcspringworkbook4.web.dto.ReviewResponseDTO;
