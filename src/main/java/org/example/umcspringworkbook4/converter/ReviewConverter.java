@@ -13,9 +13,15 @@ import org.example.umcspringworkbook4.repository.StoreRepository.StoreRepository
 import org.example.umcspringworkbook4.web.dto.ReviewRequestDTO;
 import org.example.umcspringworkbook4.web.dto.ReviewResponseDTO;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Component
 public class ReviewConverter {
-
+	private final StoreRepository storeRepository;
+	private final MemberRepository memberRepository;
 
 
 	public static ReviewResponseDTO.writeReviewDTO toaddReviewResult(Review review){
@@ -26,7 +32,7 @@ public class ReviewConverter {
 			.build();
 	}
 
-	public static Review toReview(ReviewRequestDTO.writeReviewDTO request, StoreRepository storeRepository, MemberRepository memberRepository){
+	public Review toReview(ReviewRequestDTO.writeReviewDTO request){
 		Store store = storeRepository.findById(request.getStoreId())
 			.orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND));
 		Member member = memberRepository.findById(request.getMemberId())

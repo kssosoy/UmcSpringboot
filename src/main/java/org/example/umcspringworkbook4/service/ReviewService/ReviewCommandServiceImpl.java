@@ -15,12 +15,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReviewCommandServiceImpl implements ReviewCommandService{
 	private final ReviewRepository reviewRepository;
-	private StoreRepository storeRepository;
-	private MemberRepository memberRepository;
+	private final StoreRepository storeRepository;
+	private final MemberRepository memberRepository;
+	private final ReviewConverter reviewConverter;
 
 	@Override
 	@Transactional
 	public Review createReview (ReviewRequestDTO.writeReviewDTO request){
-		return  ReviewConverter.toReview(request, storeRepository, memberRepository);
+		Review review =reviewConverter.toReview(request);
+		reviewRepository.save(review);
+		return review;
+
 	}
 }
