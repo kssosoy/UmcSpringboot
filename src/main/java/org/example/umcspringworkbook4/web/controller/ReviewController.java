@@ -19,7 +19,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RequestMapping("/review")
 public class ReviewController {
-	private ReviewCommandService reviewCommandService;
+	private final ReviewCommandService reviewCommandService;
+
 
 	//가게에 리뷰 추가하기 API
  	@PostMapping("/add")
